@@ -4,7 +4,7 @@ import invoke
 
 # pylint: disable=C0116,C0301
 
-DOCKER_IMAGE = "ghcr.io/kevin-mckenzie/n-proxy:latest"
+DOCKER_IMAGE = "ghcr.io/kevin-mckenzie/ember:latest"
 PROJECT_NAME = "ember"
 VERSION = "1.0.0"
 
@@ -174,7 +174,7 @@ def test(
     build_type = "MinSizeRel" if release else "Debug"
     build_name = f"{target}-{linking}-{build_type.lower()}"
 
-    bin_path = pathlib.Path(f"./dist/bin/proxy-{build_name}").absolute().as_posix()
+    bin_path = pathlib.Path(f"./dist/bin/{PROJECT_NAME}-{build_name}").absolute().as_posix()
     emulator = TARGETS[target].get("emulator", "")
 
     ctx.run(

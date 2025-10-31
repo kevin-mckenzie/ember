@@ -11,7 +11,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/kevin-mckenzie/n-proxy:latest
+      image: ghcr.io/kevin-mckenzie/ember:latest
 
     steps:
       - uses: actions/checkout@v4
@@ -21,7 +21,7 @@ jobs:
   build-analyze-test:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/kevin-mckenzie/n-proxy:latest
+      image: ghcr.io/kevin-mckenzie/ember:latest
 
     strategy:
       matrix:
